@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import "./App.css";
+import { useTranslation } from "react-i18next";
 
 const taskTime = 25 * 60;
 const breakTime = 5 * 60;
@@ -17,6 +18,7 @@ function App() {
   const [onTask, setOnTask] = useState(true);
   const [timerGoing, setTimerGoing] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(taskTime);
+  const { t } = useTranslation();
 
   // Listen for the service worker to tell us when the user interacted with one of the notification actions
   if ("serviceWorker" in window.navigator) {
@@ -115,9 +117,9 @@ function App() {
           color="primary"
           variant="contained"
         >
-          {onTask ? "Start Task" : "Start Break"}
+          {onTask ? t("Start Task") : t("Start Break")}
         </Button>
-        <Button onClick={() => reset(onTask)}>Reset</Button>
+        <Button onClick={() => reset(onTask)}>{t("Reset")}</Button>
       </Grid>
       <Button href="https://twitter.com/turnrye">@turnrye</Button>
     </Grid>
