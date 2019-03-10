@@ -6,7 +6,9 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
-      Reset: "Reset"
+      Reset: "Reset",
+      "Start Task": "Start Task",
+      "Start Break": "Start Break"
     }
   }
 };

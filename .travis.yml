@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script:
+  - yarn
+  - yarn lint
+  - yarn flow
+  - yarn build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: build
+  fqdn: pomodoro.wtf
+  on:
+    branch: master
