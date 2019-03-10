@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "cra-append-sw": "^2.6.1",
+    "eslint-plugin-react-hooks": "^1.5.0",
     "flow-bin": "^0.94.0",
     "gh-pages": "^2.0.1",
     "prettier": "^1.16.4",
