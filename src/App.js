@@ -5,8 +5,10 @@
 import React, { useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 import "./App.css";
 import { useTranslation } from "react-i18next";
+import Switch from "@material-ui/core/Switch";
 
 const taskTime = 25 * 60;
 const breakTime = 5 * 60;
@@ -120,6 +122,20 @@ function App() {
           {onTask ? t("Start Task") : t("Start Break")}
         </Button>
         <Button onClick={() => reset(onTask)}>{t("Reset")}</Button>
+        <FormControlLabel
+          control={
+            <Switch
+              checked={onTask}
+              onChange={event => {
+                setOnTask(event.target.checked);
+                reset(event.target.checked);
+              }}
+              disabled={timerGoing}
+              color="primary"
+            />
+          }
+          label={t("On Task")}
+        />
       </Grid>
       <Button href="https://twitter.com/turnrye">@turnrye</Button>
     </Grid>

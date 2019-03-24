@@ -8,7 +8,8 @@ const resources = {
     translation: {
       Reset: "Reset",
       "Start Task": "Start Task",
-      "Start Break": "Start Break"
+      "Start Break": "Start Break",
+      "On Task": "On Task"
     }
   }
 };
