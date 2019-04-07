@@ -118,6 +118,7 @@ function App() {
           disabled={timerGoing}
           color="primary"
           variant="contained"
+          autoFocus
         >
           {onTask ? t("Start Task") : t("Start Break")}
         </Button>
